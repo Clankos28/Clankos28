@@ -1,40 +1,39 @@
-name_one = input("Type in the name of the first character: ")
-
 try:
-    num_one = int(input("Type in the power level of the first character: "))
+    power_level = int(input("Stronger characters power level: "))
+    power_level_2 = int(input("Weaker characters power level: "))
 except:
-    print("Invalid input, restarting program.")
+    print("Invalid input, use integers.")
     
-name_two = input("Type in the name of the second character: ")
+result = power_level / power_level_2
 
-try:
-    num_two = int(input("Type in the power level of the second character: "))
-except:
-    print("Invalid input, restarting program.")
+def power():
+    if result >= 2.25:
+        return result
+    elif result >= 2:
+        return result 
+    elif result >= 1.75:
+        return result 
+    elif result >= 1.5:
+        return result 
+    elif result >= 1.25:
+        return result 
+    elif result < 1.25:
+        return result 
+
+def power_info():
+    if result >= 2.25:
+        return "(-Raw power manipulation-)"
+    elif result >= 2:
+        return "(-Tank attacks unhurt-)"
+    elif result >= 1.75:
+        return "(-High end domination-)"
+    elif result >= 1.5:
+        return "(-Easy to overwhelm-)"
+    elif result >= 1.25:
+        return "(-Start to overwhelm-)"
+    elif result < 1.25:
+        return "(-Equal in power-)"
         
-num_result = num_one / num_two
-num_result_two = num_two / num_one
 
-def num_res():
-    if num_one > num_two:
-        print(name_one + " is", num_result ,"times", "stronger than " + name_two)
-    elif num_two > num_one:
-        print(name_two + " is" , num_result_two ,"times", "stronger than " + name_one)
-        return(num_result_two)
-        
-
-print(num_res())
-
-def num_alt():
-    if num_result or num_result_two >= 1.25:
-        return("(-Start to dominate-)")
-    elif num_result or num_result_two >= 1.5:
-        return("(-Easy to overwhelm-)")
-    elif num_result or num_result_two >= 1.75:
-        return("(-High end domination-)")
-    elif num_result or num_result_two >= 2.00:
-        return("(-Tank attacks unhurt-)")
-    elif num_result or num_result_two >= 2.25:
-        return("(-Raw power manipulation-)")
-
-print(num_alt())
+print(power())
+print(power_info())
